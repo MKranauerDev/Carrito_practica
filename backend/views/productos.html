@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alta de productos</title>
+    <!-- Carga de Estilo de Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/MIPROYECTO/assets/css/estilos.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <!--Formulario inicia-->
+    <div class="container tect-center">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="productos.php" id="form_productos" enctype="multipart/form-data">
+                    <h1 class="text-center">Carga de Productos</h1>
+                    <div class="mb-3">
+                        <label  for="disabledTextInput" class="form-label" >Producto</label>
+                        <input type="text" id="pNombre" name="pNombre" class="form-control" placeholder="Sin Nombre de producto">
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Imagen</label>
+                        <input type="file" name="pImagen" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingTextarea2Enable">Descripción</label>
+                        <textarea class="form-control" name="pDescripcion" value="descripcion" id="pDescripciones" placeholder="Sin Descripción de producto"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        
+                        <div class="input-group mb-3">                
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="pPrecio" name="pPrecio" class="form-control" min="0" aria-label="Amount (to the nearest dollar)" placeholder="Pesos">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="disabledSelect">Categoría</label>
+                        <class class="input-group mb-3">
+                            <select id="pCategorias" class="form-control input_text" name="pCategoria" autocomplete="off" required="">
+                                <option value="">(seleccionar)</option>
+                                <?php foreach ($categorias as $categoria){ ?>
+                                <option value="<?php echo $categoria['id'] ?>">
+                                <?php echo $categoria['nombre_categoria'] ?>
+                                </option>    
+                                <?php } ?>
+                            </select>
+                        <!-- <input type="text" name="categoria" id="pCategorias" class="form-control input_text"> -->
+                        </class>
+                    </div>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <button type="button" class="btn btn-primary" value="cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" value="guardar">Guardar</button>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Formulario termina-->
+    <footer class="container text-center">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">Matias Kranauer</div>
+            <div class="col"></div>
+        </div>
+    </footer>
+    <!-- Carga de Estilo de Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/main.js" type="text/javascript"></script>
+    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
+</body>
+</html>

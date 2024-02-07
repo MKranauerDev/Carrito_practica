@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../assets/css/estiloshome.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+    <center>
+        <div class="lista_productos">Lista de productos</div>
+
+        <table>
+            <thead>
+                <tr>  
+                    <th>ID</th>  
+                    <th>NOMBRE</th>
+                    <th>IMAGEN</th>
+                    <th>DESCRIPCION</th>
+                    <th>PRECIO</th>
+                    <th>CATEGORIA ID</th>
+                </tr>    
+            </thead>
+            <tbody
+            <?php foreach ($lista_pro as $producto) { 
+                $imagen_src = "/MI_PROYECTO/assets/img/productos/".$producto['imagen'];
+                ?>
+                <tr>
+                    <td><?php echo $producto['id']?></td>
+                    <td><?php echo $producto['nombre_producto']?></td>
+                    <td> <img width="100" src="<?php echo $imagen_src ?>"/> </td>
+                    <td><?php echo $producto['descripcion']?></td>
+                    <td><?php echo $producto['precio']?></td>
+                    <td><?php echo $producto['categoria_id']?></td>
+                </tr>
+            <?php } ?>
+        </table>
+        <a href="productos.php?add">Agregar</a>
+    </center>
+</body>
+</html>

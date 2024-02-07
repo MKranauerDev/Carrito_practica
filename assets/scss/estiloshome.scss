@@ -1,0 +1,91 @@
+.img_logo img {
+    max-width: 100px;
+}
+
+.lista_productos {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'ubuntu', sans-serif;
+    background-color: #ff9f5a;
+    border-radius: 5px;
+    height: 3rem;
+    color: #fff;
+    padding-top: 1%;
+}
+
+#contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;  // Añadido para distribuir los bloques horizontalmente
+    margin-top: 20px;
+}
+    
+    .card {
+        border: none;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        flex: 0 0 calc(25% - 20px);
+        margin-bottom: 20px;
+        box-sizing: border-box;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        
+            .form-control{
+                text-align: center;
+                justify-content: center;
+            }
+            
+            textarea#descripcion{
+                text-align: center;
+                justify-content: center;
+                height: 200px;
+                padding-top: 10%;
+                border: none;
+                resize: none;
+            }
+        .categoriaHome{
+            .form-control{
+                border: none;
+            }
+        }
+       
+        .imagenProd{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            #imagenProducto {
+                max-height: 100%;
+                object-fit: cover;
+                margin-bottom: 10px;
+                width: 70%;
+                padding: 30px;
+            }
+        }
+        
+        #nombre{
+            border: none;
+        }
+       
+        
+        
+    }
+
+    .contAgregar{
+        text-align: center;
+    }
+.btn-agregar {
+    font-family: 'ubuntu', sans-serif;
+    background-color: #ff9f5a;
+    border-color: #ff9f5a;
+    font-size: 1.5rem;
+}
+
+.agregarProducto{
+    font-family: 'ubuntu', sans-serif;
+}
